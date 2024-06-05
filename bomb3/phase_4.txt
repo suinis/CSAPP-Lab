@@ -1,0 +1,28 @@
+08048cd9 <phase_4>:
+ 8048cd9:	55                   	push   %ebp
+ 8048cda:	89 e5                	mov    %esp,%ebp
+ 8048cdc:	83 ec 28             	sub    $0x28,%esp
+ 8048cdf:	8d 45 f4             	lea    -0xc(%ebp),%eax
+ 8048ce2:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 8048ce6:	c7 44 24 04 88 99 04 	movl   $0x8049988,0x4(%esp)
+ 8048ced:	08 
+ 8048cee:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048cf1:	89 04 24             	mov    %eax,(%esp)
+ 8048cf4:	e8 6f fb ff ff       	call   8048868 <sscanf@plt>
+ 8048cf9:	89 45 fc             	mov    %eax,-0x4(%ebp)
+ 8048cfc:	83 7d fc 01          	cmpl   $0x1,-0x4(%ebp)
+ 8048d00:	75 07                	jne    8048d09 <phase_4+0x30>
+ 8048d02:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048d05:	85 c0                	test   %eax,%eax
+ 8048d07:	7f 05                	jg     8048d0e <phase_4+0x35>
+ 8048d09:	e8 30 09 00 00       	call   804963e <explode_bomb>
+ 8048d0e:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 8048d11:	89 04 24             	mov    %eax,(%esp)
+ 8048d14:	e8 80 ff ff ff       	call   8048c99 <func4>
+ 8048d19:	89 45 f8             	mov    %eax,-0x8(%ebp)
+ 8048d1c:	83 7d f8 37          	cmpl   $0x37,-0x8(%ebp)
+ 8048d20:	74 05                	je     8048d27 <phase_4+0x4e>
+ 8048d22:	e8 17 09 00 00       	call   804963e <explode_bomb>
+ 8048d27:	c9                   	leave  
+ 8048d28:	c3                   	ret    
+

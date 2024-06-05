@@ -1,0 +1,13 @@
+08048fe0 <getbuf>:
+ 8048fe0:	55                   	push   %ebp
+ 8048fe1:	89 e5                	mov    %esp,%ebp
+ 8048fe3:	83 ec 18             	sub    $0x18,%esp
+ 8048fe6:	8d 45 f4             	lea    -0xc(%ebp),%eax
+ 8048fe9:	89 04 24             	mov    %eax,(%esp)
+ 8048fec:	e8 6f fe ff ff       	call   8048e60 <Gets>
+ 8048ff1:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8048ff6:	c9                   	leave  
+ 8048ff7:	c3                   	ret    
+ 8048ff8:	90                   	nop
+ 8048ff9:	8d b4 26 00 00 00 00 	lea    0x0(%esi,%eiz,1),%esi
+

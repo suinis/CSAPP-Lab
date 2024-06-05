@@ -1,0 +1,24 @@
+08048d60 <bang>:
+ 8048d60:	55                   	push   %ebp
+ 8048d61:	89 e5                	mov    %esp,%ebp
+ 8048d63:	83 ec 08             	sub    $0x8,%esp
+ 8048d66:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+ 8048d6d:	e8 2e fc ff ff       	call   80489a0 <entry_check>
+ 8048d72:	a1 dc a1 04 08       	mov    0x804a1dc,%eax
+ 8048d77:	3b 05 cc a1 04 08    	cmp    0x804a1cc,%eax
+ 8048d7d:	74 21                	je     8048da0 <bang+0x40>
+ 8048d7f:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8048d83:	c7 04 24 0b 9a 04 08 	movl   $0x8049a0b,(%esp)
+ 8048d8a:	e8 d5 f9 ff ff       	call   8048764 <printf@plt>
+ 8048d8f:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 8048d96:	e8 09 fa ff ff       	call   80487a4 <exit@plt>
+ 8048d9b:	90                   	nop
+ 8048d9c:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
+ 8048da0:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 8048da4:	c7 04 24 70 98 04 08 	movl   $0x8049870,(%esp)
+ 8048dab:	e8 b4 f9 ff ff       	call   8048764 <printf@plt>
+ 8048db0:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+ 8048db7:	e8 24 fd ff ff       	call   8048ae0 <validate>
+ 8048dbc:	eb d1                	jmp    8048d8f <bang+0x2f>
+ 8048dbe:	89 f6                	mov    %esi,%esi
+

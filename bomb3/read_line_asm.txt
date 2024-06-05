@@ -1,0 +1,80 @@
+080492b2 <read_line>:
+ 80492b2:	55                   	push   %ebp
+ 80492b3:	89 e5                	mov    %esp,%ebp
+ 80492b5:	57                   	push   %edi
+ 80492b6:	83 ec 24             	sub    $0x24,%esp
+ 80492b9:	e8 a1 ff ff ff       	call   804925f <skip>
+ 80492be:	89 45 f8             	mov    %eax,-0x8(%ebp)
+ 80492c1:	83 7d f8 00          	cmpl   $0x0,-0x8(%ebp)
+ 80492c5:	75 67                	jne    804932e <read_line+0x7c>
+ 80492c7:	8b 15 50 a8 04 08    	mov    0x804a850,%edx
+ 80492cd:	a1 44 a8 04 08       	mov    0x804a844,%eax
+ 80492d2:	39 c2                	cmp    %eax,%edx
+ 80492d4:	75 13                	jne    80492e9 <read_line+0x37>
+ 80492d6:	c7 04 24 a1 9c 04 08 	movl   $0x8049ca1,(%esp)
+ 80492dd:	e8 e6 f4 ff ff       	call   80487c8 <puts@plt>
+ 80492e2:	e8 57 03 00 00       	call   804963e <explode_bomb>
+ 80492e7:	eb 45                	jmp    804932e <read_line+0x7c>
+ 80492e9:	c7 04 24 bf 9c 04 08 	movl   $0x8049cbf,(%esp)
+ 80492f0:	e8 73 f4 ff ff       	call   8048768 <getenv@plt>
+ 80492f5:	85 c0                	test   %eax,%eax
+ 80492f7:	74 0c                	je     8049305 <read_line+0x53>
+ 80492f9:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 8049300:	e8 43 f5 ff ff       	call   8048848 <exit@plt>
+ 8049305:	a1 44 a8 04 08       	mov    0x804a844,%eax
+ 804930a:	a3 50 a8 04 08       	mov    %eax,0x804a850
+ 804930f:	e8 4b ff ff ff       	call   804925f <skip>
+ 8049314:	89 45 f8             	mov    %eax,-0x8(%ebp)
+ 8049317:	83 7d f8 00          	cmpl   $0x0,-0x8(%ebp)
+ 804931b:	75 11                	jne    804932e <read_line+0x7c>
+ 804931d:	c7 04 24 a1 9c 04 08 	movl   $0x8049ca1,(%esp)
+ 8049324:	e8 9f f4 ff ff       	call   80487c8 <puts@plt>
+ 8049329:	e8 10 03 00 00       	call   804963e <explode_bomb>
+ 804932e:	a1 4c a8 04 08       	mov    0x804a84c,%eax
+ 8049333:	89 c2                	mov    %eax,%edx
+ 8049335:	89 d0                	mov    %edx,%eax
+ 8049337:	c1 e0 02             	shl    $0x2,%eax
+ 804933a:	01 d0                	add    %edx,%eax
+ 804933c:	c1 e0 04             	shl    $0x4,%eax
+ 804933f:	05 60 a8 04 08       	add    $0x804a860,%eax
+ 8049344:	b9 ff ff ff ff       	mov    $0xffffffff,%ecx
+ 8049349:	89 45 e8             	mov    %eax,-0x18(%ebp)
+ 804934c:	b0 00                	mov    $0x0,%al
+ 804934e:	fc                   	cld    
+ 804934f:	8b 7d e8             	mov    -0x18(%ebp),%edi
+ 8049352:	f2 ae                	repnz scas %es:(%edi),%al
+ 8049354:	89 c8                	mov    %ecx,%eax
+ 8049356:	f7 d0                	not    %eax
+ 8049358:	48                   	dec    %eax
+ 8049359:	89 45 f4             	mov    %eax,-0xc(%ebp)
+ 804935c:	83 7d f4 4f          	cmpl   $0x4f,-0xc(%ebp)
+ 8049360:	75 11                	jne    8049373 <read_line+0xc1>
+ 8049362:	c7 04 24 ca 9c 04 08 	movl   $0x8049cca,(%esp)
+ 8049369:	e8 5a f4 ff ff       	call   80487c8 <puts@plt>
+ 804936e:	e8 cb 02 00 00       	call   804963e <explode_bomb>
+ 8049373:	8b 15 4c a8 04 08    	mov    0x804a84c,%edx
+ 8049379:	8b 4d f4             	mov    -0xc(%ebp),%ecx
+ 804937c:	49                   	dec    %ecx
+ 804937d:	89 d0                	mov    %edx,%eax
+ 804937f:	c1 e0 02             	shl    $0x2,%eax
+ 8049382:	01 d0                	add    %edx,%eax
+ 8049384:	c1 e0 04             	shl    $0x4,%eax
+ 8049387:	01 c8                	add    %ecx,%eax
+ 8049389:	05 60 a8 04 08       	add    $0x804a860,%eax
+ 804938e:	c6 00 00             	movb   $0x0,(%eax)
+ 8049391:	8b 0d 4c a8 04 08    	mov    0x804a84c,%ecx
+ 8049397:	89 ca                	mov    %ecx,%edx
+ 8049399:	89 d0                	mov    %edx,%eax
+ 804939b:	c1 e0 02             	shl    $0x2,%eax
+ 804939e:	01 d0                	add    %edx,%eax
+ 80493a0:	c1 e0 04             	shl    $0x4,%eax
+ 80493a3:	05 60 a8 04 08       	add    $0x804a860,%eax
+ 80493a8:	89 c2                	mov    %eax,%edx
+ 80493aa:	8d 41 01             	lea    0x1(%ecx),%eax
+ 80493ad:	a3 4c a8 04 08       	mov    %eax,0x804a84c
+ 80493b2:	89 d0                	mov    %edx,%eax
+ 80493b4:	83 c4 24             	add    $0x24,%esp
+ 80493b7:	5f                   	pop    %edi
+ 80493b8:	5d                   	pop    %ebp
+ 80493b9:	c3                   	ret    
+

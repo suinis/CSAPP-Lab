@@ -1,0 +1,11 @@
+
+Dynamite2-code.o:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   0:	b8 29 08 4c 1c       	mov    $0x1c4c0829,%eax
+   5:	bd 78 b4 ff ff       	mov    $0xffffb478,%ebp
+   a:	68 1e 90 04 08       	push   $0x804901e
+   f:	c3                   	ret    

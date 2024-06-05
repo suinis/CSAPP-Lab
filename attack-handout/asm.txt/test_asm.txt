@@ -1,0 +1,31 @@
+08049000 <test>:
+ 8049000:	55                   	push   %ebp
+ 8049001:	89 e5                	mov    %esp,%ebp
+ 8049003:	83 ec 18             	sub    $0x18,%esp
+ 8049006:	c7 45 fc ef be ad de 	movl   $0xdeadbeef,-0x4(%ebp)
+ 804900d:	c7 04 24 03 00 00 00 	movl   $0x3,(%esp)
+ 8049014:	e8 87 f9 ff ff       	call   80489a0 <entry_check>
+ 8049019:	e8 c2 ff ff ff       	call   8048fe0 <getbuf>
+ 804901e:	89 c2                	mov    %eax,%edx
+ 8049020:	8b 45 fc             	mov    -0x4(%ebp),%eax
+ 8049023:	3d ef be ad de       	cmp    $0xdeadbeef,%eax
+ 8049028:	74 0e                	je     8049038 <test+0x38>
+ 804902a:	c7 04 24 b8 98 04 08 	movl   $0x80498b8,(%esp)
+ 8049031:	e8 de f6 ff ff       	call   8048714 <puts@plt>
+ 8049036:	c9                   	leave  
+ 8049037:	c3                   	ret    
+ 8049038:	3b 15 cc a1 04 08    	cmp    0x804a1cc,%edx
+ 804903e:	74 12                	je     8049052 <test+0x52>
+ 8049040:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 8049044:	c7 04 24 9b 9a 04 08 	movl   $0x8049a9b,(%esp)
+ 804904b:	e8 14 f7 ff ff       	call   8048764 <printf@plt>
+ 8049050:	c9                   	leave  
+ 8049051:	c3                   	ret    
+ 8049052:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 8049056:	c7 04 24 7e 9a 04 08 	movl   $0x8049a7e,(%esp)
+ 804905d:	e8 02 f7 ff ff       	call   8048764 <printf@plt>
+ 8049062:	c7 04 24 03 00 00 00 	movl   $0x3,(%esp)
+ 8049069:	e8 72 fa ff ff       	call   8048ae0 <validate>
+ 804906e:	c9                   	leave  
+ 804906f:	c3                   	ret    
+

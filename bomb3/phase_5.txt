@@ -1,0 +1,36 @@
+08048d29 <phase_5>:
+ 8048d29:	55                   	push   %ebp
+ 8048d2a:	89 e5                	mov    %esp,%ebp
+ 8048d2c:	83 ec 18             	sub    $0x18,%esp
+ 8048d2f:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048d32:	89 04 24             	mov    %eax,(%esp)
+ 8048d35:	e8 13 03 00 00       	call   804904d <string_length>
+ 8048d3a:	89 45 fc             	mov    %eax,-0x4(%ebp)
+ 8048d3d:	83 7d fc 06          	cmpl   $0x6,-0x4(%ebp)
+ 8048d41:	74 05                	je     8048d48 <phase_5+0x1f>
+ 8048d43:	e8 f6 08 00 00       	call   804963e <explode_bomb>
+ 8048d48:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+ 8048d4f:	eb 20                	jmp    8048d71 <phase_5+0x48>
+ 8048d51:	8b 55 f8             	mov    -0x8(%ebp),%edx
+ 8048d54:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 8048d57:	03 45 08             	add    0x8(%ebp),%eax
+ 8048d5a:	0f b6 00             	movzbl (%eax),%eax
+ 8048d5d:	0f be c0             	movsbl %al,%eax
+ 8048d60:	83 e0 0f             	and    $0xf,%eax
+ 8048d63:	0f b6 80 c0 a5 04 08 	movzbl 0x804a5c0(%eax),%eax
+ 8048d6a:	88 44 15 f1          	mov    %al,-0xf(%ebp,%edx,1)
+ 8048d6e:	ff 45 f8             	incl   -0x8(%ebp)
+ 8048d71:	83 7d f8 05          	cmpl   $0x5,-0x8(%ebp)
+ 8048d75:	7e da                	jle    8048d51 <phase_5+0x28>
+ 8048d77:	c6 45 f7 00          	movb   $0x0,-0x9(%ebp)
+ 8048d7b:	c7 44 24 04 8b 99 04 	movl   $0x804998b,0x4(%esp)
+ 8048d82:	08 
+ 8048d83:	8d 45 f1             	lea    -0xf(%ebp),%eax
+ 8048d86:	89 04 24             	mov    %eax,(%esp)
+ 8048d89:	e8 e9 02 00 00       	call   8049077 <strings_not_equal>
+ 8048d8e:	85 c0                	test   %eax,%eax
+ 8048d90:	74 05                	je     8048d97 <phase_5+0x6e>
+ 8048d92:	e8 a7 08 00 00       	call   804963e <explode_bomb>
+ 8048d97:	c9                   	leave  
+ 8048d98:	c3                   	ret    
+

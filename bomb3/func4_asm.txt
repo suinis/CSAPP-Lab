@@ -1,0 +1,26 @@
+08048c99 <func4>:
+ 8048c99:	55                   	push   %ebp
+ 8048c9a:	89 e5                	mov    %esp,%ebp
+ 8048c9c:	53                   	push   %ebx
+ 8048c9d:	83 ec 08             	sub    $0x8,%esp
+ 8048ca0:	83 7d 08 01          	cmpl   $0x1,0x8(%ebp)
+ 8048ca4:	7f 09                	jg     8048caf <func4+0x16>
+ 8048ca6:	c7 45 f8 01 00 00 00 	movl   $0x1,-0x8(%ebp)
+ 8048cad:	eb 21                	jmp    8048cd0 <func4+0x37>
+ 8048caf:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048cb2:	48                   	dec    %eax
+ 8048cb3:	89 04 24             	mov    %eax,(%esp)
+ 8048cb6:	e8 de ff ff ff       	call   8048c99 <func4>
+ 8048cbb:	89 c3                	mov    %eax,%ebx
+ 8048cbd:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048cc0:	83 e8 02             	sub    $0x2,%eax
+ 8048cc3:	89 04 24             	mov    %eax,(%esp)
+ 8048cc6:	e8 ce ff ff ff       	call   8048c99 <func4>
+ 8048ccb:	01 c3                	add    %eax,%ebx
+ 8048ccd:	89 5d f8             	mov    %ebx,-0x8(%ebp)
+ 8048cd0:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 8048cd3:	83 c4 08             	add    $0x8,%esp
+ 8048cd6:	5b                   	pop    %ebx
+ 8048cd7:	5d                   	pop    %ebp
+ 8048cd8:	c3                   	ret    
+
